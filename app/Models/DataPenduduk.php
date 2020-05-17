@@ -6,22 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataPenduduk extends Model
 {
-    Public $table = 'data_penduduks';
+    public $table = 'data_penduduks';
+
+    protected $fillable = ['nik', 'nama'];
 
     public function sql()
     {
         return $this
             ->select(
-                $this->table.'.id',
-                $this->table.'.nama',
-                $this->table.'.nik',
-                $this->table.'.no_kk',
-                $this->table.'.tempat_lahir',
-                $this->table.'.tanggal_lahir',
-                $this->table.'.alamat',
-                $this->table.'.pekerjaan'
+                $this->table . '.id',
+                $this->table . '.nama',
+                $this->table . '.nik',
+                $this->table . '.no_kk',
+                $this->table . '.tempat_lahir',
+                $this->table . '.tanggal_lahir',
+                $this->table . '.alamat',
+                $this->table . '.pekerjaan'
             )->orderBy(
-                $this->table.'.id'
+                $this->table . '.id'
             );
     }
 }
